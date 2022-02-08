@@ -2,16 +2,20 @@
   "name": "natours",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
+  "main": "server.js",
   "scripts": {
-    "start:dev": "nodemon server.js",
-    "start:prod": "NODE_ENV=production nodemon server.js"
+    "start": "nodemon --experimental-modules --es-module-specifier-resolution=node server.js",
+    "start:prod": "NODE_ENV=production nodemon server.js",
+    "debug": "ndb server.js"
   },
+  "type": "module",
   "author": "Artur Karapetyan",
   "license": "ISC",
   "dependencies": {
+    "concurrently": "^7.0.0",
     "dotenv": "^16.0.0",
     "express": "^4.17.2",
+    "mongoose": "^6.2.1",
     "morgan": "^1.10.0"
   },
   "devDependencies": {
@@ -25,5 +29,8 @@
     "eslint-plugin-react": "^7.28.0",
     "nodemon": "^2.0.15",
     "prettier": "^2.5.1"
+  },
+  "engines": {
+    "node": ">=10.0.0"
   }
 }
