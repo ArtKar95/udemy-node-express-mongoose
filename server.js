@@ -3,7 +3,6 @@ import mongoose from 'mongoose';
 import app from './app';
 
 dotenv.config({ path: './config.env' });
-
 mongoose
   .connect(process.env.DB, {
     useNewUrlParser: true,
